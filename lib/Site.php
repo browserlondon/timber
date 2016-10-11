@@ -96,7 +96,7 @@ class Site extends Core implements CoreInterface {
 	public $rss;
 	public $rss2;
 	public $atom;
-	
+
 	/**
 	 * Constructs a TimberSite object
 	 * @example
@@ -110,12 +110,12 @@ class Site extends Core implements CoreInterface {
 	 * @param string|int $site_name_or_id
 	 */
 	public function __construct( $site_name_or_id = null ) {
-		if ( is_multisite() ) {
-			$blog_ids = self::switch_to_blog($site_name_or_id);
-			$this->init();
-			$this->init_as_multisite($blog_ids['new']);
-			return switch_to_blog($blog_ids['old']);
-		} 
+		// if ( is_multisite() ) {
+			// $blog_ids = self::switch_to_blog($site_name_or_id);
+			// $this->init();
+			// $this->init_as_multisite($blog_ids['new']);
+			// return switch_to_blog($blog_ids['old']);
+		// }
 		$this->init();
 		$this->init_as_singlesite();
 	}
